@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <script>
+    /* your code */
+    
+    const createNewItem = (element, text) => {
+      let fragment = new DocumentFragment();
+
+      let newElement = document.createElement(element);
+      newElement.textContent = text;
+      fragment.prepend(newElement);
+
+      return fragment;
+    }
+
+    // console.log(createNewElement('div'));
+
+    let newUl = document.createElement('ul');
+    document.body.prepend(newUl);
+
+    
+    while(true) {
+      let question = prompt('какой элемент добавить?', 'никакой');
+      
+      if(!question) {
+        break
+      }
+
+      newUl.prepend(createNewItem('li', question));
+    }
+  </script>
+</body>
+</html>
